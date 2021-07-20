@@ -10,7 +10,7 @@ for folder in */; do
     for png_file in $png_files; do
         png_file_basename=$(basename -s .png $png_file)
         if [ "$png_file_basename" == "cover" ]; then continue; fi
-        cwebp -z 9 $png_file -o ${png_file_basename}.webp
+        cwebp -size 99000 0 $png_file -o ${png_file_basename}.webp
         rm $png_file
     done
 
